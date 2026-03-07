@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANTRA 2026 | School of Excellence in Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Spectral:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --obsidian: #0a0a0b;
+            --gold: #c6a664;
+            --ash: #2a2a2d;
+            --glass: rgba(15, 15, 18, 0.96);
+            --text-main: #fcfcfc;
+            --text-sec: #a0a0a5;
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background: var(--obsidian); color: var(--text-main); font-family: 'Spectral', serif; overflow-x: hidden; background-image: radial-gradient(circle at 50% 50%, #1a1a1c 0%, #000 100%); }
+        h1, h2, h3, .nav-logo { font-family: 'MedievalSharp', cursive; text-transform: uppercase; letter-spacing: 2px; }
+
+        nav {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background: var(--glass); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gold); display: flex;
+            justify-content: space-between; align-items: center;
+            padding: 0 5%; z-index: 1000;
+        }
+        .nav-logo { color: var(--gold); font-size: 1.8rem; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        #home { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; margin-top: 80px; }
+        .hero-title { font-size: clamp(3.5rem, 12vw, 7rem); color: var(--gold); margin-bottom: 10px; }
+        
+        .btn {
+            padding: 12px 25px; border: 1px solid var(--gold);
+            background: transparent; color: var(--gold);
+            font-family: 'MedievalSharp'; cursor: pointer;
+            text-decoration: none; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 10px;
+            font-weight: bold; text-transform: uppercase; font-size: 0.8rem;
+        }
+        .btn:hover { background: var(--gold); color: black; transform: translateY(-3px); }
+        .btn-primary { background: var(--gold); color: black; }
+
+        section { padding: 60px 8%; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--gold); margin-bottom: 40px; }
+
+        .rulebook-container { background: #111; border: 1px solid var(--ash); padding: 30px; margin-bottom: 40px; text-align: center; border-left: 4px solid var(--gold); }
+
+        .tabs-header { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { background: #1a1a1c; border: 1px solid var(--ash); color: var(--text-sec); padding: 10px 25px; cursor: pointer; font-family: 'MedievalSharp'; }
+        .tab-btn.active { border-color: var(--gold); color: var(--gold); }
+
+        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .tab-content.active { display: grid; animation: fadeInUp 0.5s ease forwards; }
+
+        .event-card { background: #0f0f11; border: 1px solid #222; padding: 25px; transition: 0.3s; text-align: center; }
+        .event-card:hover { border-color: var(--gold); background: #151518; }
+        .event-card i { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
+        .event-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--gold); }
+
+        .registration-box { background: #0d0d0f; padding: 40px; border: 1px solid var(--gold); max-width: 800px; margin: 0 auto; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group.full { grid-column: span 2; }
+        label { display: block; margin-bottom: 8px; color: var(--gold); font-size: 0.75rem; text-transform: uppercase; }
+        input, select { width: 100%; padding: 12px; background: #050506; border: 1px solid var(--ash); color: white; font-family: 'Spectral'; }
+        select[multiple] { height: 180px; }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: var(--text-sec); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .form-group.full { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">TANTRA</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1 class="hero-title">TANTRA 2026</h1>
+        <p class="hero-tag">The Intra-College Cultural Conclave of SOEL.</p>
+        <a href="#register" class="btn btn-primary">Enlist Now</a>
+    </section>
+
+    <section id="events">
+        <h2 class="section-title">The Arena</h2>
+
+        <div class="rulebook-container">
+            <h3 style="margin-bottom: 15px; font-size: 1rem;">📜 Rulebooks</h3>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://drive.google.com/uc?export=view&id=1FPl1L8ZsXVza4H1CMZezoB5efFSx8AHV" target="_blank" class="btn">On-Stage Rules</a>
+                <a href="https://drive.google.com/uc?export=view&id=18p6v-gDnlvfDh3LFEMap6mQLVkOJJwxg" target="_blank" class="btn">Off-Stage Rules</a>
+            </div>
+        </div>
+
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="openTab(event, 'onstage')">On-Stage</button>
+            <button class="tab-btn" onclick="openTab(event, 'offstage')">Off-Stage</button>
+        </div>
+
+        <div id="onstage" class="tab-content active">
+            <div class="event-card"><i class="fas fa-tv"></i><h3>Channel Surfing</h3><button class="btn" onclick="preSelect('Channel surfing')">Select</button></div>
+            <div class="event-card"><i class="fas fa-users"></i><h3>Group Dance</h3><button class="btn" onclick="preSelect('Group Dance')">Select</button></div>
+            <div class="event-card"><i class="fas fa-music"></i><h3>Group Music</h3><button class="btn" onclick="preSelect('Group Music')">Select</button></div>
+            <div class="event-card"><i class="fas fa-walking"></i><h3>Adaptune</h3><button class="btn" onclick="preSelect('Adaptune')">Select</button></div>
+        </div>
+
+        <div id="offstage" class="tab-content">
+            <div class="event-card"><i class="fas fa-microphone"></i><h3>Solo Singing</h3><button class="btn" onclick="preSelect('Solo Singing')">Select</button></div>
+            <div class="event-card"><i class="fas fa-user"></i><h3>Solo Dancing</h3><button class="btn" onclick="preSelect('Solo Dancing')">Select</button></div>
+            <div class="event-card"><i class="fas fa-laugh"></i><h3>Standup Comedy</h3><button class="btn" onclick="preSelect('Standup Comedy')">Select</button></div>
+            <div class="event-card"><i class="fas fa-theater-masks"></i><h3>Drama</h3><button class="btn" onclick="preSelect('Drama')">Select</button></div>
+            <div class="event-card"><i class="fas fa-utensils"></i><h3>Cooking Without Fire</h3><button class="btn" onclick="preSelect('Cooking without fire')">Select</button></div>
+            <div class="event-card"><i class="fas fa-anchor"></i><h3>Shipwreck</h3><button class="btn" onclick="preSelect('Shipwreck')">Select</button></div>
+            <div class="event-card"><i class="fas fa-film"></i><h3>Cinema Quiz</h3><button class="btn" onclick="preSelect('Cinema Quiz')">Select</button></div>
+            <div class="event-card"><i class="fas fa-magic"></i><h3>Makeup & Hairdressing</h3><button class="btn" onclick="preSelect('Makeup& Hairdressing')">Select</button></div>
+            <div class="event-card"><i class="fas fa-paint-brush"></i><h3>Mask Painting</h3><button class="btn" onclick="preSelect('Mask Painting')">Select</button></div>
+            <div class="event-card"><i class="fas fa-map-marked-alt"></i><h3>Treasure Hunt</h3><button class="btn" onclick="preSelect('Treasure Hunt')">Select</button></div>
+            <div class="event-card"><i class="fas fa-comments"></i><h3>Block & Tackle</h3><button class="btn" onclick="preSelect('Block & Tackle')">Select</button></div>
+            <div class="event-card"><i class="fas fa-video"></i><h3>Reel Making</h3><button class="btn" onclick="preSelect('Reel Making')">Select</button></div>
+            <div class="event-card"><i class="fas fa-camera"></i><h3>Photography</h3><button class="btn" onclick="preSelect('Photography')">Select</button></div>
+            <div class="event-card"><i class="fas fa-futbol"></i><h3>E-Football</h3><button class="btn" onclick="preSelect('E - Football')">Select</button></div>
+            <div class="event-card"><i class="fas fa-gamepad"></i><h3>BGMI</h3><button class="btn" onclick="preSelect('BGMI')">Select</button></div>
+            <div class="event-card"><i class="fas fa-dumbbell"></i><h3>Wheels on Workout</h3><button class="btn" onclick="preSelect('Wheels on Workout')">Select</button></div>
+        </div>
+    </section>
+
+    <section id="register">
+        <h2 class="section-title">Registration</h2>
+        <div class="registration-box">
+            <form id="regForm">
+                <div class="form-grid">
+                    <div class="form-group"><label>Name</label><input type="text" id="name" required></div>
+                    <div class="form-group"><label>Reg Number</label><input type="text" id="regNum" required></div>
+                    <div class="form-group"><label>Phone</label><input type="tel" id="phone" pattern="[0-9]{10}" required></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="email" required></div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select id="dept" required>
+                            <option value="">Select</option>
+                            <option value="BA">BA</option><option value="BBA">BBA</option><option value="BCOM">BCOM</option>
+                            <option value="BCA">BCA</option><option value="LLB">LLB</option><option value="LLM">LLM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <select id="year" required>
+                            <option value="">Select</option>
+                            <option value="1">1st Year</option><option value="2">2nd Year</option><option value="3">3rd Year</option>
+                            <option value="4">4th Year</option><option value="5">5th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group full"><label>Section</label><input type="text" id="section" required></div>
+                    <div class="form-group full">
+                        <label>Select Events (Hold Ctrl/Cmd)</label>
+                        <select id="eventSelect" multiple required>
+                            <optgroup label="On-Stage">
+                                <option value="Channel surfing">Channel surfing</option><option value="Group Dance">Group Dance</option>
+                                <option value="Group Music">Group Music</option><option value="Adaptune">Adaptune</option>
+                            </optgroup>
+                            <optgroup label="Off-Stage">
+                                <option value="Solo Singing">Solo Singing</option><option value="Solo Dancing">Solo Dancing</option>
+                                <option value="Standup Comedy">Standup Comedy</option><option value="Drama">Drama</option>
+                                <option value="Cooking without fire">Cooking without fire</option><option value="Shipwreck">Shipwreck</option>
+                                <option value="Cinema Quiz">Cinema Quiz</option><option value="Makeup& Hairdressing">Makeup & Hairdressing</option>
+                                <option value="Mask Painting">Mask Painting</option><option value="Treasure Hunt">Treasure Hunt</option>
+                                <option value="Block & Tackle">Block & Tackle</option><option value="Reel Making">Reel Making</option>
+                                <option value="Photography">Photography</option><option value="E - Football">E-Football</option>
+                                <option value="BGMI">BGMI</option><option value="Wheels on Workout">Wheels on Workout</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Finalize Registration</button>
+            </form>
+            <p id="formMsg" style="margin-top: 20px; text-align: center;"></p>
+        </div>
+    </section>
+
+    <footer><p>© 2026 SOEL - TANTRA</p></footer>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzoEfd1tshXykDQzXt9XAQwpCASrwzSyx53aDXtxZnwZdqgbUscGdvuMU63GybAz4Q/exec';
+
+        function openTab(evt, tabName) {
+            let i, content, links;
+            content = document.getElementsByClassName("tab-content");
+            for (i = 0; i < content.length; i++) content[i].style.display = "none";
+            links = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < links.length; i++) links[i].classList.remove("active");
+            document.getElementById(tabName).style.display = "grid";
+            evt.currentTarget.classList.add("active");
+        }
+
+        function preSelect(val) {
+            const select = document.getElementById('eventSelect');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === val) select.options[i].selected = true;
+            }
+            window.location.href = "#register";
+        }
+
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMsg');
+            btn.disabled = true; btn.innerText = 'Submitting...';
+
+            const events = Array.from(document.getElementById('eventSelect').selectedOptions).map(o => o.value).join(', ');
+
+            fetch(SCRIPT_URL, {
+                method: 'POST', mode: 'no-cors', cache: 'no-cache',
+                body: JSON.stringify({
+                    data: [{
+                        Name: document.getElementById('name').value,
+                        RegNumber: document.getElementById('regNum').value,
+                        Phone: document.getElementById('phone').value,
+                        Email: document.getElementById('email').value,
+                        Department: document.getElementById('dept').value,
+                        Year: document.getElementById('year').value,
+                        Section: document.getElementById('section').value,
+                        Events: events,
+                        Timestamp: new Date().toLocaleString()
+                    }]
+                })
+            }).then(() => {
+                msg.innerText = "Success! Data Recorded."; msg.style.color = "#c6a664";
+                this.reset(); btn.disabled = false; btn.innerText = 'Finalize Registration';
+            });
+        });
+    </script>
+</body>
+</html>
